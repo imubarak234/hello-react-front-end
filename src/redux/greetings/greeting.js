@@ -14,22 +14,20 @@ export const addThings = (payload) => ({
 
 export const fetchGreetingApi = () => async (dispatch) => {
   const value = await Axios.get('/v1/greetings');
-  const greeting = value.data.greeting;
-  console.log(value.data.greeting);
-  dispatch(addThings(greeting))
+  const { greeting } = value.data;
+  dispatch(addThings(greeting));
 };
-
 
 export const initialState = [];
 
 function rootReducer(state = initialState, action) {
-  switch (action.type){
+  switch (action.type) {
     case GET_THINGS_REQUEST:
-      return state
+      return state;
     case ADD_STUFF:
-      return [action.payload]
+      return [action.payload];
     default:
-      return state
+      return state;
   }
 }
 

@@ -1,17 +1,9 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react';
 
-class Home extends React.Component {
-  render () {
-    return (
-      <React.Fragment>
-        Welcome: {this.props.welcome}
-      </React.Fragment>
-    );
-  }
-}
+const Home = () => (
+  <div className="container">
+    <h3 className="h2">Home</h3>
+  </div>
+);
 
-Home.propTypes = {
-  welcome: PropTypes.string
-};
-export default Home
+export default Home;
